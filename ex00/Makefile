@@ -2,7 +2,7 @@ SRCS = main.cpp Bureaucrat.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-NAME = animal
+NAME = bureaucrat
 
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98

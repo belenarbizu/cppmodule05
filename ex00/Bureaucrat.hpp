@@ -33,4 +33,6 @@ public:
     };
 };
 
+std::ostream& operator<<(std::ostream& os, Bureaucrat& bc);
+
 #endif
