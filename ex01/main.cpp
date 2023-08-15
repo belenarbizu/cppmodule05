@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
@@ -28,6 +29,16 @@ int main()
     try
     {
         Bureaucrat("Red", 0);
+    }
+    catch (std::exception & e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+
+    try
+    {
+        Form* Form = new class Form("Green", 100, 10);
+        std::cout << Form->getName() << std::endl;
     }
     catch (std::exception & e)
     {

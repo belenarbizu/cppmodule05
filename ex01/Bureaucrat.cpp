@@ -73,6 +73,18 @@ void Bureaucrat::subtractGrade()
     }
 }
 
+void Bureaucrat::signForm(Form form)
+{
+    if (form.isSigned() == 1)
+    {
+        std::cout << this->_name << " signed " << form.getName() << std::endl;
+    }
+    else
+    {
+        std::cout << this->_name << " couldn't sign " << form.getName() << " because it's not signed" << std::endl;
+    }
+}
+
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
     return ("Grade can't be less than 1");
