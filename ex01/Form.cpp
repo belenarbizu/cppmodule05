@@ -13,7 +13,7 @@ Form::Form(std::string name, int signGrade, int execGrade) : _name(name), _signG
     {
         throw (Form::GradeTooLowException());
     }
-    else if (signGrade < 1 || signGrade < 1)
+    else if (signGrade < 1 || execGrade < 1)
     {
         throw (Form::GradeTooHighException());
     }
@@ -55,7 +55,7 @@ int Form::getExecGrade() const
     return (this->_execGrade);
 }
 
-void Form::beSigned(Bureaucrat bc)
+void Form::beSigned(Bureaucrat &bc)
 {
     if (bc.getGrade() <= this->_signGrade)
         this->_signed = true;

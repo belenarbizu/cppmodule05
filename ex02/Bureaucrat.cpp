@@ -73,7 +73,7 @@ void Bureaucrat::subtractGrade()
     }
 }
 
-void Bureaucrat::signForm(Form& form)
+void Bureaucrat::signForm(AForm& form)
 {
     if (form.isSigned() == 1)
     {

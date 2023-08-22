@@ -11,6 +11,7 @@ int main()
         std::cout << Blue->getName() << std::endl;
         Blue->subtractGrade();
         std::cout << Blue->getGrade() << std::endl;
+        delete Blue;
     }
     catch (std::exception & e)
     {
@@ -28,17 +29,51 @@ int main()
 
     try
     {
-        Form* Green = new Form("Green", 100, 10);
-        std::cout << Green->getName() << std::endl;
-        std::cout << Green->getSignGrade() << std::endl;
-        std::cout << Green->getExecGrade() << std::endl;
-        Bureaucrat* Yellow = new Bureaucrat("Yellow", 30);
-        std::cout << Green->isSigned() << std::endl;
-        Yellow->signForm(Green);
+        Form Green("Green", 100, 10);
+        std::cout << Green.getName() << std::endl;
+        std::cout << Green.getSignGrade() << std::endl;
+        std::cout << Green.getExecGrade() << std::endl;
+        Bureaucrat Yellow("Yellow", 30);
+        std::cout << Green.isSigned() << std::endl;
+        Yellow.signForm(Green);
+        Green.beSigned(Yellow);
+        Yellow.signForm(Green);
+        std::cout << Green;
     }
     catch (std::exception & e)
     {
         std::cout << e.what() << std::endl;
     }
+
+    try
+    {
+        Form("Red", 160, 1);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
+    try
+    {
+        Form("Red", 1, 0);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
+    try
+    {
+        Form Black("Black", 120, 28);
+        Form CopyBlack(Black);
+        std::cout << CopyBlack.getName() << std::endl;
+        std::cout << CopyBlack.getSignGrade() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
     return 0;
 }

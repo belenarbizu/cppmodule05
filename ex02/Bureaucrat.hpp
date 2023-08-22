@@ -5,7 +5,7 @@ class Bureaucrat;
 
 #include <iostream>
 #include <exception>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class Bureaucrat {
 private:
@@ -24,7 +24,7 @@ public:
     void addGrade();
     void subtractGrade();
 
-    void signForm(Form& form);
+    void signForm(AForm& form);
 
     class GradeTooHighException : public std::exception
     {

@@ -16,7 +16,7 @@ private:
 public:
     AForm();
     AForm(std::string name, int signGrade, int execGrade);
-    ~AForm();
+    virtual ~AForm();
     AForm(const AForm& form);
     AForm& operator= (const AForm& form);
 
