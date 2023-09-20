@@ -17,7 +17,7 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
-
+    std::cout << "--------------------------" << std::endl;
     try
     {
         Bureaucrat("Red", 160);
@@ -26,7 +26,7 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
-
+    std::cout << "--------------------------" << std::endl;
     try
     {
         Form Green("Green", 100, 10);
@@ -36,15 +36,14 @@ int main()
         Bureaucrat Yellow("Yellow", 30);
         std::cout << Green.isSigned() << std::endl;
         Yellow.signForm(Green);
-        Green.beSigned(Yellow);
-        Yellow.signForm(Green);
+        std::cout << Green.isSigned() << std::endl;
         std::cout << Green;
     }
     catch (std::exception & e)
     {
         std::cout << e.what() << std::endl;
     }
-
+    std::cout << "--------------------------" << std::endl;
     try
     {
         Form("Red", 160, 1);
@@ -53,7 +52,7 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
-    
+    std::cout << "--------------------------" << std::endl;
     try
     {
         Form("Red", 1, 0);
@@ -62,7 +61,7 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
-
+    std::cout << "--------------------------" << std::endl;
     try
     {
         Form Black("Black", 120, 28);

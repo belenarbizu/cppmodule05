@@ -4,8 +4,6 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
-//copy bc constructor???
-
 int main()
 {
     try

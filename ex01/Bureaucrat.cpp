@@ -75,11 +75,12 @@ void Bureaucrat::subtractGrade()
 
 void Bureaucrat::signForm(Form &form)
 {
-    if (form.isSigned() == 1)
+    try
     {
+        form.beSigned(*this);
         std::cout << this->_name << " signed " << form.getName() << std::endl;
     }
-    else
+    catch (std::exception & e)
     {
         std::cout << this->_name << " couldn't sign " << form.getName() << " because it's not signed" << std::endl;
     }
