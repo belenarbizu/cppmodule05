@@ -3,41 +3,61 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
     try
     {
-        PresidentialPardonForm PPF("Prueba Target");
-        Bureaucrat bc1("Blue", 4);
-        bc1.signForm(PPF);
-        std::cout << PPF.isSigned() << std::endl;
-        PPF.execute(bc1);
+        Intern someRandomIntern;
+        AForm* rrf;
+        rrf = someRandomIntern.makeForm("robotomy request", "Bender");
     }
     catch (std::exception & e)
     {
         std::cout << e.what() << std::endl;
     }
-    std::cout << "------------------------------" << std::endl;
+    std::cout << "----------------------------------" << std::endl;
     try
     {
-        RobotomyRequestForm RRF("Uno");
-        Bureaucrat bc("Blue", 44);
-        std::cout << RRF.isSigned() << std::endl;
-        bc.signForm(RRF);
-        RRF.execute(bc);
+        Intern someRandomIntern;
+        AForm* ppf;
+        ppf = someRandomIntern.makeForm("presidential pardon", "Bender");
     }
     catch (std::exception & e)
     {
         std::cout << e.what() << std::endl;
     }
-    std::cout << "------------------------------" << std::endl;
+    std::cout << "----------------------------------" << std::endl;
     try
     {
-        ShrubberyCreationForm SCF("Dos");
-        Bureaucrat bc("Blue", 79);
-        bc.signForm(SCF);
-        SCF.execute(bc);
+        Intern someRandomIntern;
+        AForm* scf;
+        scf = someRandomIntern.makeForm("shrubbery creation", "Bender");
+    }
+    catch (std::exception & e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+    std::cout << "----------------------------------" << std::endl;
+    try
+    {
+        Intern someRandomIntern;
+        AForm* wrongForm;
+        wrongForm = someRandomIntern.makeForm("WorngForm", "Bender");
+    }
+    catch (std::exception & e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+    std::cout << "----------------------------------" << std::endl;
+    try
+    {
+        Intern someRandomIntern;
+        AForm* rrf;
+        rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+        Bureaucrat bc("Ben", 150);
+        rrf->execute(bc);
     }
     catch (std::exception & e)
     {
