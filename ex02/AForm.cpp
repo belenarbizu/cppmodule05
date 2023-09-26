@@ -60,7 +60,7 @@ bool AForm::getSigned() const
     return (this->_signed);
 }
 
-void AForm::beSigned(Bureaucrat bc)
+void AForm::beSigned(const Bureaucrat & bc)
 {
     if (bc.getGrade() <= this->_signGrade)
         this->_signed = true;
@@ -74,7 +74,7 @@ int AForm::isSigned() const
         return 1;
     return 0;
 }
-void AForm::canBeExecutable(Bureaucrat const & bc) const
+void AForm::canBeExecutable(const Bureaucrat & bc) const
 {
     if (!this->_signed)
     {

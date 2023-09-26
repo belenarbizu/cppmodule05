@@ -78,7 +78,7 @@ void Bureaucrat::signForm(AForm& form)
     try
     {
         form.beSigned(*this);
-        std::cout << this->_name << " signed " << form.getName() << std::endl;
+        std::cout << form.getName() << " is signed" << std::endl;
     }
     catch (std::exception & e)
     {
@@ -86,7 +86,7 @@ void Bureaucrat::signForm(AForm& form)
     }
 }
 
-void Bureaucrat::executeForm(AForm const & form)
+void Bureaucrat::executeForm(const AForm & form)
 {
     if (form.isSigned())
     {

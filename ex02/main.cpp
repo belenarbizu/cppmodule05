@@ -4,42 +4,64 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
-//copy bc constructor???
 
 int main()
 {
+    std::cout << "--------------PPF HULK----------------" << std::endl;
     try
     {
-        PresidentialPardonForm PPF("Prueba Target");
-        Bureaucrat bc1("Blue", 4);
-        bc1.signForm(PPF);
-        std::cout << PPF.isSigned() << std::endl;
-        PPF.execute(bc1);
+        PresidentialPardonForm PPF("Hulk");
+        Bureaucrat Blue("Blue", 4);
+        Blue.signForm(PPF);
+        PPF.execute(Blue);
     }
     catch (std::exception & e)
     {
         std::cout << e.what() << std::endl;
     }
-    std::cout << "------------------------------" << std::endl;
+    std::cout << "---------------RRF UNO---------------" << std::endl;
     try
     {
         RobotomyRequestForm RRF("Uno");
-        Bureaucrat bc("Blue", 44);
-        std::cout << RRF.isSigned() << std::endl;
-        bc.signForm(RRF);
-        RRF.execute(bc);
+        Bureaucrat bc2("Green", 44);
+        RRF.beSigned(bc2);
+        RRF.execute(bc2);
     }
     catch (std::exception & e)
     {
         std::cout << e.what() << std::endl;
     }
-    std::cout << "------------------------------" << std::endl;
+    std::cout << "---------------SCF BART---------------" << std::endl;
     try
     {
-        ShrubberyCreationForm SCF("Dos");
-        Bureaucrat bc("Blue", 79);
-        bc.signForm(SCF);
-        SCF.execute(bc);
+        ShrubberyCreationForm SCF("Bart");
+        Bureaucrat bc3("Red", 79);
+        bc3.signForm(SCF);
+        SCF.execute(bc3);
+    }
+    catch (std::exception & e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+    std::cout << "-------------COULDN'T SIGN--------------" << std::endl;
+    try
+    {
+        PresidentialPardonForm PPF("Gus");
+        Bureaucrat Blue("Blue", 44);
+        Blue.signForm(PPF);
+        PPF.execute(Blue);
+    }
+    catch (std::exception & e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+    std::cout << "---------------GRADE TOO LOW---------------" << std::endl;
+    try
+    {
+        RobotomyRequestForm RRF("Low");
+        Bureaucrat bc2("Green", 50);
+        RRF.beSigned(bc2);
+        RRF.execute(bc2);
     }
     catch (std::exception & e)
     {

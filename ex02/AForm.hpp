@@ -25,9 +25,9 @@ public:
     int getExecGrade() const;
     bool getSigned() const;
 
-    void beSigned(Bureaucrat bc);
+    void beSigned(const Bureaucrat & bc);
     int isSigned() const;
-    void canBeExecutable(Bureaucrat const & bc) const;
+    void canBeExecutable(const Bureaucrat & bc) const;
 
     virtual void execute(Bureaucrat const & executor) const = 0;
 
