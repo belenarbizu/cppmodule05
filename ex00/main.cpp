@@ -10,6 +10,7 @@ int main()
         std::cout << Blue->getName() << std::endl;
         Blue->subtractGrade();
         std::cout << Blue->getGrade() << std::endl;
+		delete Blue;
     }
     catch (std::exception & e)
     {
@@ -33,5 +34,16 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
+
+	try
+	{
+		Bureaucrat* Green = new Bureaucrat("Green", 90);
+		std::cout << *Green << std::endl;
+		delete Green;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
     return 0;
 }

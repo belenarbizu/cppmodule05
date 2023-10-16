@@ -24,7 +24,7 @@ public:
     void addGrade();
     void subtractGrade();
 
-    void signForm(AForm& form);
+    void signForm(AForm & form);
     void executeForm(AForm const & form);
 
     class GradeTooHighException : public std::exception

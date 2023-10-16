@@ -30,7 +30,6 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat::Bureaucrat(const Bureaucrat& bc)
 {
     *this = bc;
-    std::cout << "Copy bc constructor called" << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator= (const Bureaucrat& bc)
